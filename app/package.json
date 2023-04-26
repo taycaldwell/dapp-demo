@@ -1,0 +1,33 @@
+{
+  "name": "starter",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@mantine/core": "^6.0.7",
+    "@mantine/ds": "^6.0.7",
+    "@mantine/hooks": "^6.0.7",
+    "@mantine/prism": "^6.0.7",
+    "@tabler/icons-react": "^2.16.0",
+    "@thirdweb-dev/chains": "^0.1.11",
+    "@thirdweb-dev/react": "^3.11.7",
+    "@thirdweb-dev/sdk": "^3.10.10",
+    "ethers": "^5.7.2",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "eslint": "^8.15.0",
+    "eslint-config-next": "^12.1.6",
+    "typescript": "^4.9.4"
+  }
+}
