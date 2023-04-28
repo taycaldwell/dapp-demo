@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { AppProps } from 'next/app';
 import { MantineProvider, ColorSchemeProvider, ColorScheme } from '@mantine/core';
 import { ThirdwebProvider,coinbaseWallet, metamaskWallet } from "@thirdweb-dev/react";
-import { BaseGoerli } from "@thirdweb-dev/chains";
+import { Ethereum } from "@thirdweb-dev/chains";
 import themeColors from '../theme/colors'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     
   return (
     <ThirdwebProvider
-    activeChain={BaseGoerli}
+    activeChain={Ethereum}
     supportedWallets={[
       coinbaseWallet(),
       metamaskWallet(),

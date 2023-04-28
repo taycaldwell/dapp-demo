@@ -3,10 +3,8 @@ import {
     Header as MantineHeader,
     Container,
     Group,
-    rem,
-    useMantineColorScheme 
+    rem, 
   } from '@mantine/core';
-import { ConnectWallet } from "@thirdweb-dev/react";
 
 import ThemeToggle from './themeToggle'
 
@@ -54,14 +52,11 @@ const useStyles = createStyles((theme) => ({
 
 export default function Header() {
   const { classes } = useStyles();
-  const { colorScheme } = useMantineColorScheme();
 
   return (
     <MantineHeader height={HEADER_HEIGHT} sx={{ borderBottom: 0 }}>
       <Container className={classes.inner} fluid>
         <Group>
-          <ConnectWallet 
-              theme={colorScheme}/>
           <ThemeToggle />
         </Group>
       </Container>

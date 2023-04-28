@@ -32,7 +32,7 @@ function Gallery() {
   const { classes } = useStyles();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const { contract } = useContract("0xac6564f3718837caadd42eed742d75c12b90a052");
+  const { contract } = useContract("0xD4307E0acD12CF46fD6cf93BC264f5D5D1598792");
   const { data: metadata } = useMetadata(contract);
   const { data: totalCount } = useTotalCount(contract);
   

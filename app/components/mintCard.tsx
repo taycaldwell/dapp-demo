@@ -1,5 +1,4 @@
-import { createStyles, Card, Image, Text, Group, Title, rem, useMantineTheme } from '@mantine/core';
-import { useContract, useMintNFT, Web3Button  } from "@thirdweb-dev/react";
+import { createStyles, Card, Button, Image, Text, Group, Title, rem, useMantineTheme } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -36,8 +35,6 @@ interface MintCardProps {
   name: string;
   author: string;
   description: string;
-  contractAddress: string;
-  address: string;
 }
 
 export default function MintCard({
@@ -45,14 +42,9 @@ export default function MintCard({
   name,
   author,
   description,
-  contractAddress,
-  address
 }: MintCardProps) {
   const { classes } = useStyles();
   const theme = useMantineTheme();
-
-  const { contract } = useContract(contractAddress);
-  const { mutateAsync: mintNft } = useMintNFT(contract);
 
   return (
     <Card withBorder shadow="md" radius="md" p={0} className={classes.card}>
@@ -70,21 +62,11 @@ export default function MintCard({
           <Text weight={600} size="xl" mb="lg">
             {description}
           </Text>
-          <Web3Button
-            contractAddress={contractAddress}
-            action={() =>
-              mintNft({
-                metadata: {
-                  name: name,
-                  description: description,
-                },
-                to: address,
-              })
-            }
-            style={{background: theme.fn.primaryColor(), color: theme.white }}
-          >
-            Mint
-          </Web3Button> 
+          <Button
+            variant="gradient"
+            gradient={{ from: '#0052FF', to: '#538afc' }}>
+          Mint
+          </Button> 
         </div>
       </Group>
     </Card>

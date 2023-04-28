@@ -1,4 +1,3 @@
-import { useAddress  } from "@thirdweb-dev/react";
 import { Container, Center, Title, createStyles, rem } from "@mantine/core";
 import MintCard from "./mintCard";
 
@@ -28,13 +27,10 @@ const useStyles = createStyles((theme) => ({
 function Mint() {
   const { classes } = useStyles();
 
-  const contractAddress = "0xa254dcf210727c64478C87cA0044c4689c8B77b9";
-  const address = useAddress();
-
-  const name="Demo NFT"
-  const author="Coinbase"
-  const description="An on-chain NFT deployed on Base."
-  const image="/image/dot.png"
+  const name="NFT Name"
+  const author="Author"
+  const description="A description for the NFT."
+  const image=""
 
   return (
       <Center>
@@ -42,21 +38,14 @@ function Mint() {
           <Title className={classes.title}>
             Mint an NFT
           </Title>
-          {!address &&
-            <div>No wallet connected</div>
-          }
-          {address &&
           <div>
             <MintCard
               image={image}
               description={description}
               name={name}
               author={author}
-              contractAddress={contractAddress}
-              address={address}
                 />
           </div>
-          }
         </Container>
       </Center>
   );
