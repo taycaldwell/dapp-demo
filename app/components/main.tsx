@@ -45,7 +45,7 @@ const useStyles = createStyles((theme) => ({
   
 export default function Main() {
   const { classes } = useStyles();
-  const [value, setValue] = useState('mint');
+  const [value, setValue] = useState('gallery');
 
   return (
     <Container size="lg" py="xl">
@@ -57,16 +57,16 @@ export default function Main() {
           radius="xl"
           size="md"
           data={[
-            { label: 'Mint', value: 'mint' },
             { label: 'Gallery', value: 'gallery' },
+            { label: 'Mint', value: 'mint' },
           ]}
           classNames={classes}
         />
-        {value === 'mint' &&
-          <Mint />
-        }
         {value === 'gallery' &&
           <Gallery />
+        }
+        {value === 'mint' &&
+          <Mint />
         }
         </Group>
       </Center>
